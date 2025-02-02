@@ -4,8 +4,10 @@ clc;
 
 %% Data Load
 
-cd 'C:\Users\lara\OneDrive - Abax Investments\Desktop\PHD'
+%cd 'C:\Users\lara\OneDrive - Abax Investments\Desktop\PHD'
 load('sample_data.mat'); % monthly data, simulated from ND Data to demonstrate results. 247 returns (January 1996 to August 2016), for 194 names
+
+warning('off', 'all'); %removes warning from poorly conditioned matrices that arent used (checks rcond)
 
 %% Compute the key variables
 
@@ -16,7 +18,7 @@ solution = "con_7"; % choose "uncon" (unconstrained or constrained solutions V a
 % Parameters unvaried for the thesis
 roll = 5; % number of years to calculate stock mean and covariance matrices off of
 tp = 10; % size of total performance period used (5 years to calcualte mean and covariance; 5 years to compare performance from)
-nsim = 300; % number of simulations
+nsim = 5; % number of simulations
 ns = 10; % number of stocks in simulation
 
 n = size(data,1);
@@ -24,7 +26,9 @@ n = size(data,1);
 % Parameters for constrained solutions VI or VII
 if solution == "con_6"
     alpha_0 = 0.01; % minimum ER of portfolio
+    g_0 = 1; % sum of weights
 elseif solution == "con_7"
+    lambda = 1; % risk aversion parameter
     g_0 = 1; % sum of weights
 end
 
@@ -91,7 +95,6 @@ t=1; % tracking the number of simulations
                         iw = (B/D)*((alpha_0*A)-(g_0*B));
                         t_a = (g_0 - iw)*t0 + iw*(ta);
                     elseif solution == "con_7"
-                        lambda = 1; % risk aversion parameter
                         mu8 = 1/lambda *B;    
                         t_a = (g_0 - mu8)*t0 + mu8*ta;
                     end
@@ -142,7 +145,6 @@ t=1; % tracking the number of simulations
                         iw = (B/D)*((alpha_0*A)-(g_0*B));
                         w1 = (g_0 - iw)*w_0 + iw*(w_a);
                     elseif solution == "con_7"
-                        lambda = 1; % risk aversion parameter
                         mu8 = 1/lambda *B;    
                         w1 = (g_0 - mu8)*w_0 + mu8*w_a;
                     end

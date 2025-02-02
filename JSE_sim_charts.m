@@ -164,7 +164,7 @@ for i = 1:7
     cheaders = categorical(repmat(headers(i),nsim,1));
     boxchart(cheaders, risk(:,which_k, i)*sqrt(12), 'BoxFaceColor', colors(i,:))
 end
-ylim([0.005 1])
+ylim([0.005 1])  % some large outliers distort chart, may vary depending on solution
 a=[cellstr(num2str(get(gca,'ytick')'*100))]; 
 pct = char(ones(size(a,1),1)*'%'); 
 new_yticks = [char(a),pct];
