@@ -4,7 +4,6 @@ clc;
 
 %% Data Load
 
-%cd 'C:\Users\lara\OneDrive - Abax Investments\Desktop\PHD'
 load('sample_data.mat'); % monthly data, simulated from ND Data to demonstrate results. 247 returns (January 1996 to August 2016), for 194 names
 
 warning('off', 'all'); %removes warning from poorly conditioned matrices that arent used (checks rcond)
@@ -18,7 +17,7 @@ solution = "con_7"; % choose "uncon" (unconstrained or constrained solutions V a
 % Parameters unvaried for the thesis
 roll = 5; % number of years to calculate stock mean and covariance matrices off of
 tp = 10; % size of total performance period used (5 years to calcualte mean and covariance; 5 years to compare performance from)
-nsim = 5; % number of simulations
+nsim = 1000; % number of simulations
 ns = 10; % number of stocks in simulation
 
 n = size(data,1);

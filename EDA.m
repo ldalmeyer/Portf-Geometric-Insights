@@ -1,7 +1,7 @@
 %% Load Data
 clear
 clc
-%cd 'C:\Users\lara\OneDrive - Abax Investments\Desktop\PHD'
+
 load('sample_data.mat'); % monthly sample data
 
 n=size(data,2); % no stocks 
