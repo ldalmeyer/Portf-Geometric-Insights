@@ -21,7 +21,12 @@ The script "ND_simulations_charts.m" generates the simulations performed in sect
 
 Code Function : This script simulates 10 years worth of monthly stock return data, for 10 stock portfolios, from normal distributions with random mean (between 0% and 50% p.a) and random standard deviation (between 0% and 20% p.a.) with 1000 replications per simulation. The α-weight angle for the equally weighted portfolio is calculated and compared to the α-weight angle of the optimal risk portfolio on every simulation. The script then generates two figures that show the percentage number of performance simulations with weights better aligned with those of the returns, and the average difference between the conditioned angles and the unconditioned angles with confidence intervals. One figure is for the unconstrained optimisations (and constrained solutions V and VII), and the other for the constrained cases.
 
-Instructions : The code will run and generate figures automatically, and parameters are set as was used in the thesis. The following parameters may, however, be varied as desired:
+Instructions : The code will run and generate figures automatically, except for one file that needs to be downloaded by the user:
+
+1. The function degreetick, developed by Green (2025), is used to adds degree symbols to tick labels on an axis.
+
+Parameters are set as was used in the thesis
+
 1. lambda: This is the risk aversion parameter required for constrained solution VII (see Table 4.1).
 2. alpha_0 : This is the minimum return parameter required for constrained solution VI (see Table 4.1).
 
@@ -88,3 +93,5 @@ Ledoit, O., Wolf, M., 2003b. Improved estimation of the covariance matrix of sto
 Ledoit, O., Wolf, M., 2004b. A well-conditioned estimator for large-dimensional covariance matrices. Journal of Multivariate Analysis 88, 365–411.
 
 Matare, N., dsr: Deflated sharpe ratio. URL: https://rdrr.io/github/nmatare/quanttools/man/dsr.html.
+
+Chad Greene (2025). degreetick (https://www.mathworks.com/matlabcentral/fileexchange/50792-degreetick), MATLAB Central File Exchange. Retrieved February 2, 2025.
