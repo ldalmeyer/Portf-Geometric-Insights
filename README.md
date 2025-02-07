@@ -48,7 +48,7 @@ Code Function : The script generates the following charts, in performing explora
 Instructions : The code will run and generate figures automatically; no parameter specification is required.
 
 **Code: Simulation Shrinkage Results**
-The script "real_world_simulations_JSE.m" performs the simulation work that is performed on historical total return stock data, described in seen in section 7.3. The figures illustrating these results are performed in script JSE sim charts.m. These simulations are performed for unconstrained solutions (see Table 1.1) and constrained solutions V and VII (see Table 4.1). More particularly, this code generates the results seen in:
+The script "real_world_simulations_JSE.m" performs the simulation work that is performed on historical total return stock data, described in seen in section 7.3. The figures illustrating these results are performed in script JSE sim charts.m. These simulations are performed for unconstrained solutions (see Table 1.1) and constrained solutions (see Table 4.1). More particularly, this code generates the results seen in:
 1. Subsection 7.3.2; the results are illustrated in Charts 7.11, 7.12 and 7.13.
 2. Subsection 7.3.2.1; the results are illustrated in Charts 7.15, 7.16 and 7.17.
 3. Subsection 7.3.2.2; the results are illustrated in Charts 7.19, 7.20 and 7.21.
@@ -56,13 +56,13 @@ The script "real_world_simulations_JSE.m" performs the simulation work that is p
 
 Code Function : The script compares the Golts and Jones (2009) methodology against other shrinkage methodologies, by performing a set of 1000 simulations, and assessing the out of sample results of each method. Each simulation follows the steps outlined in Table 7.1. The shrinkage methodologies investigated in this script are those developed by Ledoit (1995) and Ledoit and Wolf (2003b, 2004b). The seven different methodologies we consider are provided in section 7.3.1 in detail.
 
-Instructions : When running the code to produce results seen in this these, the following parameters are described, and need to be set as required to reproduce simulation results.
+Instructions : When running the code to produce results seen in this project, the following parameters are described, and need to be set as required to reproduce simulation results.
 1. for ExpRet: This variable defines how your expected return vector is calculated. This should be set to 1 when expected returns are perfectly foreseeable, and forward returns are used as the expected return vector (this generates results seen in subsection 7.3.4), and the variable should be set to 0 when one has no insight into expected returns and historical average returns are used (this generates results seen in subsection 7.3.2).
 2. solution: This variable specifies which portfolio optimisation solution you are solving for, and should be set to uncon when one wants to solve for unconstrained solutions (see Table 1.1) or constrained solution V and VII , to con 6 when one wants to solve for constrained solution VI, and to con 7 when one wants to solve for constrained solution VII (see Table 4.1).
 
 Other parameters the user is able to set at the start of the script are as follows, but these are set to parameters as used in the thesis and are not required to be changed:
 1. tp: The total performance period over which the methodology is assessed; this paper has elected 10 year periods. This paper calculates 5 years worth of out-of-sample performance data, using 5 years historical rolling data.
-2. roll : The number of years to use as the historical data, off which to calculated the sample covariance matrix and expected returns (assuming no foreseeability of expected returns); this paper has elected 5 year periods.
+2. roll : The number of years to use as the historical data, off which to calculate the sample covariance matrix and expected returns (assuming no foreseeability of expected returns); this paper has elected 5 year periods.
 3. nsim : The number of simulations to perform; this paper elects 1000 simulations.
 4. ns: The number of stocks to include in the portfolio; this paper chose 10 random stocks.
 
